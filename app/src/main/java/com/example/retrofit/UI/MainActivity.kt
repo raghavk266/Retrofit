@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import com.example.retrofit.R
 import com.example.retrofit.data.Retrofits
@@ -20,14 +21,15 @@ class MainActivity : AppCompatActivity() {
         mBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 //        val api = Retrofits.apiInstance
 //        val repo = JokesRepository(api)
-        val repo = (this.application as JokesApplication).repo
-        val viewModel = ViewModelProvider(this,MyViewModelFactory(repo)).get(JokesViewModel::class.java)
-        mBinding.makeRequestButton.setOnClickListener{
-            viewModel.getRandomJoke()
+        supportFragmentManager.commit {
+            replace(R.id.container,HomeScreen())
         }
-        viewModel._joke.observe(this){
-            Log.e(TAG,it.toString())
-        }
+//        mBinding.makeRequestButton.setOnClickListener{
+//            viewModel.getRandomJoke()
+//        }
+//        viewModel._joke.observe(this){
+//            Log.e(TAG,it.toString())
+//        }
 
     }
 }
