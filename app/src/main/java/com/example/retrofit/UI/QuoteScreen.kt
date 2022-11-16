@@ -40,9 +40,9 @@ class QuoteScreen : Fragment() {
     }
     fun setUIChanges(enable:Boolean= true){
         if(enable){
-            mBinding.circularProgressIndicator.visibility = View.VISIBLE
+            mBinding.progressCircular.visibility = View.VISIBLE
         }else{
-            mBinding.circularProgressIndicator.visibility = View.GONE
+            mBinding.progressCircular.visibility = View.GONE
         }
     }
 }

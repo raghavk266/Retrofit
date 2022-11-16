@@ -1,10 +1,12 @@
 package com.example.retrofit.UI
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.retrofit.data.model.CNJokes
 import com.example.retrofit.data.repo.JokesRepository
 import kotlinx.coroutines.launch
 
+private const val TAG = "JokesViewModel"
 class JokesViewModel(
     private val repo: JokesRepository
 ) : ViewModel() {
@@ -13,9 +15,14 @@ class JokesViewModel(
     val _joke: LiveData<CNJokes> = joke
 
     fun getRandomJoke(){
-        viewModelScope.launch {
-            joke.value = repo.getRandomJoke()
+        try{
+            viewModelScope.launch {
+                joke.value = repo.getRandomJoke()
+            }
+        }catch(e:Exception){
+            Log.e(TAG,"exception caught ${e.message}")
         }
+
     }
 }
 
