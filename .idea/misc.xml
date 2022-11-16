@@ -7,7 +7,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/fragment_quote.xml" value="0.3333333333333333" />
-        <entry key="app/src/main/res/layout/fragment_quote_screen.xml" value="0.3171875" />
+        <entry key="app/src/main/res/layout/fragment_quote_screen.xml" value="0.16" />
       </map>
     </option>
   </component>
